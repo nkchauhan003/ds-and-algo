@@ -43,7 +43,7 @@ public class BT15_ConstructBinaryTreeFromStringWithBracket {
     }
 
     public static void main(String[] args) {
-        String str = "4(2(3)(1))(6(5))";
+        String str = "1(2(4)(5))(3(6))";
         Node root = constructTree(str, 0, str.length() - 1);
         traverseLevelOrder(root);
     }
