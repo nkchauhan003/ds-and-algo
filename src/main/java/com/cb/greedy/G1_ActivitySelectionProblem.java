@@ -6,7 +6,7 @@ import java.util.stream.Collectors;
 /*
  * O(n log n) - for unsorted
  * O(n) for sorted by 'finish'
- *
+ * Greedy
  * */
 public class G1_ActivitySelectionProblem {
 
