@@ -1,12 +1,34 @@
-
 package com.cb.dp;
 
 /*
- * DP-Memoization
- * Time Complexity: sum*n
- * Space: sum*n + O(n) auxiliary stack space
+ * Recursion
+ * Equal Sum Partition
+ * Time Complexity: 2^n
  * */
-public class Dp2_SubsetSumProblem {
+public class Dp3_EqualSumPartitionProblem {
+    public static boolean isEqualSumPartition(int[] arr, int n) {
+
+        // calculate sum of array
+        int sum = 0;
+        for (int i = 0; i < arr.length; i++)
+            sum += arr[i];
+
+        // odd sum can not be divided in two
+        if (sum % 2 != 0)
+            return false;
+
+        // initializing table with -1
+        int table[][] = new int[sum + 1][n + 1];
+        for (int i = 0; i < table.length; i++) {
+            for (int j = 0; j < table[i].length; j++)
+                table[i][j] = -1;
+        }
+
+
+        // check of sub-array with "sum / 2" sum is present
+        return isSubsetSum(arr, sum / 2, n, table);
+    }
+
     public static boolean isSubsetSum(int[] arr, int sum, int n, int table[][]) {
 
         // base case
@@ -35,18 +57,12 @@ public class Dp2_SubsetSumProblem {
     }
 
     public static void main(String[] args) {
-        int[] set = {3, 34, 4, 12, 5, 2};
-        int sum = 9;
+        int[] set = {1, 5, 11, 5};
         int n = set.length;
+        System.out.println(isEqualSumPartition(set, n)); // true
 
-        // initializing table with -1
-        int table[][] = new int[sum + 1][n + 1];
-        for (int i = 0; i < table.length; i++) {
-            for (int j = 0; j < table[i].length; j++)
-                table[i][j] = -1;
-        }
-
-        System.out.println(isSubsetSum(set, sum, n, table)); // true
-
+        int[] set1 = {1, 5, 3};
+        int n1 = set.length;
+        System.out.println(isEqualSumPartition(set1, n1)); // false
     }
 }
