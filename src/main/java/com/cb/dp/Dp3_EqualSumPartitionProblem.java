@@ -1,9 +1,9 @@
 package com.cb.dp;
 
 /*
- * Recursion
+ * Memoization
  * Equal Sum Partition
- * Time Complexity: 2^n
+ * Time Complexity: n * sum
  * */
 public class Dp3_EqualSumPartitionProblem {
     public static boolean isEqualSumPartition(int[] arr, int n) {
