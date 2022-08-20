@@ -1,7 +1,7 @@
 package com.cb.dp;
 
 /*
- * Recursion
+ * Memoization
  * LCS
  * Time Complexity: n*m
  * */
