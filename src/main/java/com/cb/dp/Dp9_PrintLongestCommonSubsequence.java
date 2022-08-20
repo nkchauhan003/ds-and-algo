@@ -5,7 +5,7 @@ package com.cb.dp;
  * Print LCS
  * Time Complexity: n*m
  * */
-public class Dp9_PrintLCS {
+public class Dp9_PrintLongestCommonSubsequence {
     public static String lcs(String s1, String s2, int n, int m, String[][] t) {
 
         if (n == 0 || m == 0)

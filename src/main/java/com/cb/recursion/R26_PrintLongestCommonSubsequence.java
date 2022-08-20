@@ -5,7 +5,7 @@ package com.cb.recursion;
  * Print LCS
  * Time Complexity: n^2
  * */
-public class R26_PrintLCS {
+public class R26_PrintLongestCommonSubsequence {
     public static String lcs(String s1, String s2, int n, int m) {
 
         if (n == 0 || m == 0)
