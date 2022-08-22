@@ -23,8 +23,8 @@ public class R26_PrintLongestCommonSubsequence {
 
     public static void main(String[] args) {
 
-        String s1 = "acbcf";
-        String s2 = "abcdaf";
+        String s1 = "AGGTAB";
+        String s2 = "GXTXAYB";
         int n = s1.length();
         int m = s2.length();
 
