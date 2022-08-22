@@ -3,7 +3,7 @@ package com.cb.dp;
 /*
  * Memoization
  * SCS
- * Time Complexity: n^2
+ * Time Complexity: n*m
  * */
 public class Dp10_ShortestCommonSuperSequence {
     public static int lcs(String s1, String s2, int n, int m, Integer[][] t) {
