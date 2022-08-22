@@ -2,7 +2,7 @@ package com.cb.recursion;
 
 /*
  * Recursion
- * Print LCS
+ * SCS
  * Time Complexity: n^2
  * */
 public class R27_ShortestCommonSuperSequence {
@@ -27,8 +27,8 @@ public class R27_ShortestCommonSuperSequence {
 
     public static void main(String[] args) {
 
-        String s1 = "abcd";
-        String s2 = "xycd";
+        String s1 = "AGGTAB";
+        String s2 = "GXTXAYB";
         int n = s1.length();
         int m = s2.length();
 
