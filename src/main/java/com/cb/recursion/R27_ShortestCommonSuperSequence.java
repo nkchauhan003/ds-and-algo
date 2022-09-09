@@ -32,6 +32,6 @@ public class R27_ShortestCommonSuperSequence {
         int n = s1.length();
         int m = s2.length();
 
-        System.out.println(lcs(s1, s2, n, m)); //4
+        System.out.println(lcs(s1, s2, n, m)); //9
     }
 }
