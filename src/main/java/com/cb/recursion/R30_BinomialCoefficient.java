@@ -8,14 +8,9 @@ public class R30_BinomialCoefficient {
     public static int c(int n, int k) {
         if (n < k)
             return 0;
-        return fact(n) / (fact(k) * fact(n - k));
-    }
-
-    public static int fact(int n) {
-        if (n == 1)
+        if (n == k || k == 0)
             return 1;
-        return n * fact(n - 1);
-
+        return c(n - 1, k - 1) + c(n - 1, k);
     }
 
     public static void main(String[] args) {
