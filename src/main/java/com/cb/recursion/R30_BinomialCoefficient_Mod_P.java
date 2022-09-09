@@ -2,7 +2,8 @@ package com.cb.recursion;
 
 /*
  * Recursion
- * Binomial Coefficient
+ * Binomial Coefficient (Mod "p")
+ * Time Complexity: O(2^n)
  * */
 public class R30_BinomialCoefficient_Mod_P {
 
@@ -20,6 +21,4 @@ public class R30_BinomialCoefficient_Mod_P {
         int p = (int) (Math.pow((double) 10.0, (double) 9.0) + 7);
         System.out.println(c(n, k, p)); // 1682343578
     }
-
-
 }

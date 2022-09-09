@@ -2,8 +2,8 @@ package com.cb.dp;
 
 /*
  * Memoization
- * Binomial Coefficient
- * Mod "p"
+ * Binomial Coefficient (Mod "p")
+ * Time Complexity: O(n*k)
  * */
 public class Dp14_BinomialCoefficient {
 
