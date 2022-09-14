@@ -3,7 +3,7 @@ package com.cb.recursion;
 /*
  * Recursion
  * LCS
- * Time Complexity: n^2
+ * Time Complexity: O(2^n)
  * */
 public class R24_LongestCommonSubsequence {
     public static int lcs(String s1, String s2, int n, int m) {

@@ -3,7 +3,7 @@ package com.cb.recursion;
 /*
  * Recursion
  * S1 to S2 by Min Insert & Delete
- * Time Complexity: n^2
+ * Time Complexity: O(2^n)
  * */
 public class R28_ConvertStrAtoBbyMinInsertAndDelete {
 
