@@ -7,9 +7,7 @@ package com.cb.recursion;
  * */
 public class R34_LongestPalindromicSubsequence {
     public static int longestPalindromicSubsequence(String s, int n) {
-        String s2 = reverse(s);
-        int m = s2.length();
-        return lcs(s, reverse(s), n, m);
+        return lcs(s, reverse(s), n, n);
     }
 
     public static int lcs(String s1, String s2, int n, int m) {

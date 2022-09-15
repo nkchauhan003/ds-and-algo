@@ -7,17 +7,14 @@ package com.cb.dp;
  * */
 public class Dp18_LongestPalindromicSubsequence {
     public static int longestPalindromicSubsequence(String s, int n) {
-        String s2 = reverse(s);
-        int m = s2.length();
-
-        int[][] t = new int[n + 1][m + 1];
+        int[][] t = new int[n + 1][n + 1];
         for (int i = 0; i < t.length; i++) {
             for (int j = 0; j < t[i].length; j++) {
                 t[i][j] = -1;
             }
         }
 
-        return lcs(s, reverse(s), n, m, t);
+        return lcs(s, reverse(s), n, n, t);
     }
 
     public static int lcs(String s1, String s2, int n, int m, int[][] t) {
