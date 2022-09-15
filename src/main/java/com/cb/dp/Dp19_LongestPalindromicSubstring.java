@@ -34,10 +34,10 @@ public class Dp19_LongestPalindromicSubstring {
         return t3d[n][m][lForT3d] = max(l, lnIncludingS1, lnIncludingS2);
     }
 
-    private static int max(int a, int b, int c) {
-        if (a > b && a > c)
+    public static int max(int a, int b, int c) {
+        if (a >= b && a >= c)
             return a;
-        if (b > a && b > c)
+        if (b >= a && b >= c)
             return b;
         return c;
     }
