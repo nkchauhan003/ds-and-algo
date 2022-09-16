@@ -40,6 +40,6 @@ public class R37_MaximizeNumberOfSegments {
 
     // main
     public static void main(String[] args) {
-        System.out.println(segments(7, 2, 5, 5)); // 3
+        System.out.println(segments(7, 2, 5, 5)); // 2
     }
 }

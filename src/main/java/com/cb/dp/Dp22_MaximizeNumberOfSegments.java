@@ -48,6 +48,6 @@ public class Dp22_MaximizeNumberOfSegments {
         int p = 2, q = 5, r = 5;
         Integer[] t = new Integer[l + 1];
 
-        System.out.println(segments(7, 2, 5, 5, t)); // 3
+        System.out.println(segments(7, 2, 5, 5, t)); // 2
     }
 }
