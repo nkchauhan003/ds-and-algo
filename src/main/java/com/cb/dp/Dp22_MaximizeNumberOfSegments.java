@@ -3,7 +3,7 @@ package com.cb.dp;
 /*
  * Recursion
  * Maximize number of segments
- * Time Complexity: 2^n
+ * Time Complexity: O(n)
  * */
 public class Dp22_MaximizeNumberOfSegments {
 

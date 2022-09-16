@@ -3,7 +3,7 @@ package com.cb.recursion;
 /*
  * Recursion
  * Maximize number of segments
- * Time Complexity: 2^n
+ * Time Complexity: 3^n
  * */
 public class R37_MaximizeNumberOfSegments {
 
