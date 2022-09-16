@@ -3,7 +3,7 @@ package com.cb.dp;
 /*
  * Memoization
  * Gold Mine Problem
- * Time Complexity: n^2
+ * Time Complexity: O(n*m)
  * */
 public class Dp21_GoldMineProblem {
 
@@ -60,6 +60,6 @@ public class Dp21_GoldMineProblem {
                 {0, 6, 4},
         };
         int n = 3, m = 3;
-        System.out.println(maxGold(arr, n, m)); // 3
+        System.out.println(maxGold(arr, n, m)); // 12
     }
 }

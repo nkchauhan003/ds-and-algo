@@ -3,7 +3,7 @@ package com.cb.recursion;
 /*
  * Recursion
  * Gold Mine Problem
- * Time Complexity: 2^n
+ * Time Complexity: O(3^n*m)
  * */
 public class R36_GoldMineProblem {
 
@@ -55,6 +55,6 @@ public class R36_GoldMineProblem {
                 {0, 6, 4},
         };
         int n = 3, m = 3;
-        System.out.println(maxGold(arr, n, m)); // 3
+        System.out.println(maxGold(arr, n, m)); // 12
     }
 }
