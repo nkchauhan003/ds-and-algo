@@ -26,10 +26,15 @@ public class A11_MinimumNumberOfJumps {
         return min;
     }
 
+    public static int minJumpCheckUnreachable(int arr[], int n, int i) {
+        int jump = minJump(arr, n, i);
+        return jump == Integer.MAX_VALUE ? -1 : jump;
+    }
+
 
     public static void main(String[] args) {
         int arr[] = {2, 3, 1, 1, 2, 4, 2, 0, 1, 1};
-        System.out.println(minJump(arr, arr.length, 0));
+        System.out.println(minJumpCheckUnreachable(arr, arr.length, 0));
     }
 }
 
