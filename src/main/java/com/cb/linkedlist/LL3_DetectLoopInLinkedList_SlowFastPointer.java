@@ -40,7 +40,7 @@ public class LL3_DetectLoopInLinkedList_SlowFastPointer {
         node4.next = node5;
         node5.next = node2; // making loop
 
-        System.out.println("Contains Loop: " + containsLoop(head));
+        System.out.println("Contains Loop: " + containsLoop(head)); // true
     }
 
     static class Node<T> {
