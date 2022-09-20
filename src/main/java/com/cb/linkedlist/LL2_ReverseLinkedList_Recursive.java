@@ -38,9 +38,9 @@ public class LL2_ReverseLinkedList_Recursive {
         head.next.next.next.next = new Node(5);
 
         // traverse
-        traverse(head);
+        traverse(head); // 1 2 3 4 5
         head = reverse(head, null);
-        traverse(head);
+        traverse(head); // 5 4 3 2 1
     }
 
     // helper fn to traverse

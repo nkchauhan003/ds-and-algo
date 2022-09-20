@@ -1,9 +1,9 @@
 package com.cb.linkedlist;
 
 /*
-* Time Complexity: O(3n) or O(n)
-* Space Complexity: O(n)
-* */
+ * Time Complexity: O(3n) or O(n)
+ * Space Complexity: O(n)
+ * */
 public class LL2_ReverseLinkedList_UsingArray {
 
     public static Node<Integer> reverse(Node<Integer> head) {
