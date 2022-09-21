@@ -3,7 +3,7 @@ package com.cb.recursion;
 /*
  * Recursion
  * Longest Common Substring
- * Time Complexity: O(2^n)
+ * Time Complexity: O(2^(m+n))
  * */
 public class R25_LongestCommonSubstring {
     public static int lcSubStr(String s1, String s2, int n, int m, int l) {

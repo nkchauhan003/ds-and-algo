@@ -3,7 +3,7 @@ package com.cb.recursion;
 /*
  * Recursion
  * Longest Palindromic Subsequence
- * Time Complexity: 2^n
+ * Time Complexity: O(2^(m+n))
  * */
 public class R34_LongestPalindromicSubsequence {
     public static int longestPalindromicSubsequence(String s, int n) {

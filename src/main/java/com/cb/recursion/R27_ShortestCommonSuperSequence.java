@@ -3,7 +3,7 @@ package com.cb.recursion;
 /*
  * Recursion
  * SCS
- * Time Complexity: O(2^n)
+ * Time Complexity: O(2^(m+n))
  * */
 public class R27_ShortestCommonSuperSequence {
     public static int lcs(String s1, String s2, int n, int m) {
