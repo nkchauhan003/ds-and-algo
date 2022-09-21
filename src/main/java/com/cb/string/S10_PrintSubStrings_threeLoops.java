@@ -19,7 +19,7 @@ public class S10_PrintSubStrings_threeLoops {
     }
 
     public static void main(String[] args) {
-        String s = "abc";
+        String s = "abcd";
         substrings(s, s.length());
     }
 }
