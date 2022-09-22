@@ -47,6 +47,6 @@ public class A8_KadanesAlgorithm_AllNegative {
         System.out.println(contiguousSubArray(arr, arr.length)); // -1
 
         int[] arr1 = {-2, 1, -3, 4, -1, 2, 1, -5, 4};
-        System.out.println(contiguousSubArray(arr1, arr1.length)); // 7
+        System.out.println(contiguousSubArray(arr1, arr1.length)); // 6
     }
 }
