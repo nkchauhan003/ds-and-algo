@@ -40,7 +40,7 @@ public class A8_KadanesAlgorithm_Print_Subarray {
     }
 
     public static void main(String[] args) {
-        int[] arr = {-2, -3, 4, -1, -2, 1, 5, -3};
+        int[] arr = {-2, 1, -3, 4, -1, 2, 1, -5, 4};
         contiguousSubArray(arr, arr.length); // Sub-array: { 4 -1 -2 1 5 }, Sum: 7
     }
 }
