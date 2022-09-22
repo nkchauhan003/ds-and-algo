@@ -20,7 +20,6 @@ public class LL9_MiddleOfLinkedListTwoPointers {
         return slow;
     }
 
-
     public static void main(String[] args) {
 
         // 1->2->3->4->5->6->null
@@ -40,10 +39,10 @@ public class LL9_MiddleOfLinkedListTwoPointers {
 
         // traverse
         traverse(evenNodes);
-        System.out.println(middle(evenNodes).data);
+        System.out.println(middle(evenNodes).data); //4
 
         traverse(oddNodes);
-        System.out.println(middle(oddNodes).data);
+        System.out.println(middle(oddNodes).data); //3
     }
 
     public static void traverse(Node<Integer> head) {
