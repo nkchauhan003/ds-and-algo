@@ -1,39 +1,73 @@
 package com.cb.sort;
 
 import java.util.Arrays;
+import java.util.stream.Collectors;
 
 public class MergeSort {
-    private static int partition(int[] arr, int low, int high) {
+    private static void mergeSort(int[] arr, int l, int h) {
+        // single element
+        if (l >= h)
+            return;
 
-        int pivot = arr[high];
-        int pIndex = low;
-        for (int i = low; i < high; i++) {
-            if (arr[i] <= pivot) {
-                int tmp = arr[i];
-                arr[i] = arr[pIndex];
-                arr[pIndex] = tmp;
-                pIndex++;
-            }
-        }
-        int tmp = arr[pIndex];
-        arr[pIndex] = arr[high];
-        arr[high] = tmp;
-        return pIndex;
+        int mid = (h + l) / 2;
+
+        mergeSort(arr, l, mid);
+        mergeSort(arr, mid + 1, h);
+
+        merge(arr, l, mid, h);
     }
 
-    private static void sort(int[] arr, int low, int high) {
-        if (low < high) {
-            int pIndex = partition(arr, low, high);
-            sort(arr, low, pIndex - 1);
-            sort(arr, pIndex + 1, high);
+    private static void merge(int[] arr, int l, int mid, int h) {
+
+        int n = mid - l + 1;
+        int m = h - mid;
+
+        int left[] = new int[n];
+        int right[] = new int[m];
+
+        for (int i = 0; i < n; i++) {
+            left[i] = arr[l + i];
+        }
+
+        for (int i = 0; i < m; i++) {
+            right[i] = arr[mid + 1 + i];
+        }
+        int i = 0, j = 0;
+
+        int k = l;
+        while (i < n && j < m) {
+            if (left[i] <= right[j]) {
+                arr[k] = left[i];
+                i++;
+            } else {
+                arr[k] = right[j];
+                j++;
+            }
+            k++;
+        }
+
+        while (i < n) {
+            arr[k] = left[i];
+            i++;
+            k++;
+        }
+
+        while (j < m) {
+            arr[k] = right[j];
+            j++;
+            k++;
         }
 
     }
 
     public static void main(String[] args) {
-        int[] arr = {3, 5, 2, 7, 4, 1, 6};
-        sort(arr, 0, arr.length - 1);
-        // printing array
-        System.out.println(Arrays.toString(arr));
+        int arr[] = {12, 11, 13, 5, 6, 7};
+        printArray(arr);
+        mergeSort(arr, 0, arr.length - 1);
+        printArray(arr);
+    }
+
+    private static void printArray(int[] arr) {
+        System.out.println(Arrays.stream(arr).mapToObj(Integer::toString).collect(Collectors.joining(",")));
     }
 }
