@@ -23,7 +23,6 @@ public class A20_ChooseAndSwap_np2_time_constantSpace {
                         }
                         k--;
                     }
-
                     if (isGood) {
                         c1 = s[i];
                         c2 = s[j];
@@ -34,20 +33,18 @@ public class A20_ChooseAndSwap_np2_time_constantSpace {
             if (c1 != null)
                 break;
         }
-        //System.out.println(c1 + "," + c2);
         if (c1 != null)
             for (int i = 0; i < n; i++) {
                 if (s[i] == c1)
                     s[i] = c2;
                 else if (s[i] == c2)
                     s[i] = c1;
-
             }
     }
 
 
     public static void main(String[] args) {
-        String s = "ccad";
+        String s = "baab";
         int n = s.length();
 
         char[] chars = s.toCharArray();

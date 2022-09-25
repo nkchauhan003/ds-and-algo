@@ -48,11 +48,11 @@ public class Dp1_01KnapsackProblem_Memoization {
     }
 
     public static void main(String[] args) {
-        int[] weight = {10, 20, 30};
-        int[] value = {60, 100, 120};
+        int[] weight = {1, 3, 4, 5};
+        int[] value = {10, 40, 50, 70};
         int n = weight.length;
-        int capacity = 50;
+        int capacity = 8;
 
-        System.out.println(knapsack(weight, value, capacity, n)); // 220
+        System.out.println(knapsack(weight, value, capacity, n)); // 110
     }
 }
