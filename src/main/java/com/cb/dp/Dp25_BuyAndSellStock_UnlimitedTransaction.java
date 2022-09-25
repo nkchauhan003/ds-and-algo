@@ -2,7 +2,6 @@ package com.cb.dp;
 
 /*
  * Buy and Sell Stock (Unlimited Transaction)
- * Valley Peak Approach
  * Time: O(n)
  * Space: O(1)
  * */
@@ -29,7 +28,6 @@ public class Dp25_BuyAndSellStock_UnlimitedTransaction {
         int n = prices.length;
 
         Integer t[][] = new Integer[n + 1][2];
-
         System.out.println(maxProfit(prices, 0, prices.length, true, t)); //865
     }
 }
