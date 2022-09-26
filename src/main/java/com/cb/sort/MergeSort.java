@@ -61,7 +61,7 @@ public class MergeSort {
     }
 
     public static void main(String[] args) {
-        int arr[] = {12, 11, 13, 5, 6, 7};
+        int arr[] = {38, 27, 43, 3, 9, 82, 10};
         printArray(arr);
         mergeSort(arr, 0, arr.length - 1);
         printArray(arr);
