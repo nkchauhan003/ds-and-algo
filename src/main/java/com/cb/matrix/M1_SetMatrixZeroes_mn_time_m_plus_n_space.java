@@ -1,8 +1,8 @@
 package com.cb.matrix;
 
 /*
- * Time: m * n
- * Space: m + n
+ * Time: O(m * n)
+ * Space: O(m + n)
  * */
 public class M1_SetMatrixZeroes_mn_time_m_plus_n_space {
 
@@ -42,7 +42,6 @@ public class M1_SetMatrixZeroes_mn_time_m_plus_n_space {
 
         printMatrix(mtx, m, n);
         setMatrixZero(mtx, m, n);
-        System.out.println();
         printMatrix(mtx, m, n);
     }
 
@@ -53,5 +52,6 @@ public class M1_SetMatrixZeroes_mn_time_m_plus_n_space {
             }
             System.out.println();
         }
+        System.out.println();
     }
 }

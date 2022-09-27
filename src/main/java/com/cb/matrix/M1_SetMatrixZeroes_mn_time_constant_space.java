@@ -1,8 +1,8 @@
 package com.cb.matrix;
 
 /*
- * Time: m * n
- * Space: m + n
+ * Time: O(m * n)
+ * Space: O(1)
  * */
 public class M1_SetMatrixZeroes_mn_time_constant_space {
 
@@ -29,26 +29,25 @@ public class M1_SetMatrixZeroes_mn_time_constant_space {
         }
 
         // mark zero based on 'column[]' and 'rows[]'
-        for (int r = m-1; r >= 0; r--) {
-            for (int c = n-1; c >= 1; c--) {
+        for (int r = m - 1; r >= 0; r--) {
+            for (int c = n - 1; c >= 1; c--) {
                 if (mtx[0][c] == 0 || mtx[r][0] == 0) {
                     mtx[r][c] = 0;
                 }
             }
-            if(col00==0)
-                mtx[r][0]=0;
+            if (col00 == 0)
+                mtx[r][0] = 0;
         }
     }
 
     public static void main(String[] args) {
-        int mtx[][] = {{1, 0, 3}};
+        int mtx[][] = {{0, 1, 2, 0}, {3, 4, 5, 2}, {1, 3, 1, 5}};
 
         int m = mtx.length;
         int n = m > 0 ? mtx[0].length : 0;
 
         printMatrix(mtx, m, n);
         setMatrixZero(mtx, m, n);
-        System.out.println();
         printMatrix(mtx, m, n);
     }
 
@@ -59,5 +58,6 @@ public class M1_SetMatrixZeroes_mn_time_constant_space {
             }
             System.out.println();
         }
+        System.out.println();
     }
 }
