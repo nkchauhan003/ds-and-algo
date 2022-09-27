@@ -27,6 +27,6 @@ public class S11_PrintSubSequences {
 
     public static void main(String[] args) {
         String s = "abc";
-        subsequence(s, s.length(), "");
+        subsequence(s, s.length(), ""); // abc,bc,ac,c,ab,b,a
     }
 }
