@@ -3,6 +3,7 @@ package com.cb.arrays;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+
 /*
  * Print all Permutations
  * Time: O(n * !n)
@@ -36,7 +37,7 @@ public class A21_PrintAllPermutations_extraSpace_ArrayList {
     }
 
     public static void main(String[] args) {
-        int[] arr = {1, 2, 3};
+        int[] arr = {0, 1};
         System.out.println(permutations(arr));
     }
 }
