@@ -5,6 +5,10 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
 
+/*
+ * Time: O(v+e)
+ * Space: O(v)
+ * */
 public class G1_BreadthFirstSearch {
 
     public static List<Integer> breadthFirstSearch(int v, List<List<Integer>> adj) {
