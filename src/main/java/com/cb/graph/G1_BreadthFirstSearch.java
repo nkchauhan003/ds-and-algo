@@ -36,9 +36,10 @@ public class G1_BreadthFirstSearch {
             adj.add(new ArrayList<>());
 
         adj.get(0).add(1);
-        adj.get(0).add(2);
-        adj.get(0).add(3);
-        adj.get(2).add(4);
+        adj.get(1).add(4);
+        adj.get(1).add(2);
+        adj.get(2).add(3);
+        adj.get(3).add(4);
 
         System.out.println(breadthFirstSearch(v, adj));
     }
