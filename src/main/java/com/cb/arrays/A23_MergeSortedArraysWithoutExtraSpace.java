@@ -31,13 +31,13 @@ public class A23_MergeSortedArraysWithoutExtraSpace {
 
     public static void main(String[] args) {
 
-        long a1[] = {1, 3, 5, 7};
-        long a2[] = {0, 2, 6, 8, 9};
-        printArray(a1);
-        printArray(a2);
+        long a1[] = {10, 12};
+        long a2[] = {5, 18, 20};
+        printArray(a1); // 10,12
+        printArray(a2);// 5,18,20
         merge(a1, a1.length, a2, a2.length);
-        printArray(a1);
-        printArray(a2);
+        printArray(a1); // 5,10
+        printArray(a2); // 12,18,20
 
     }
 

@@ -10,8 +10,8 @@ public class M3_RotateMatrix_extraSpace {
 
         int[][] tmp = new int[n][m];
 
-        for (int j = 0; j < n; j++) {
-            for (int i = m - 1; i >= 0; i--) {
+        for (int i = 0; i < m; i++) {
+            for (int j = 0; j < n; j++) {
                 tmp[j][(m - 1) - i] = matrix[i][j];
             }
         }
