@@ -22,15 +22,14 @@ public class G4_DetectCycleUndirectedGraphDFS {
     public static boolean cycleInComponent(List<List<Integer>> adj, boolean[] visited, int start, int prev) {
         visited[start] = true;
 
-        boolean isLoop = false;
-        for (int i = 0; i < adj.get(start).size(); i++) {
-            if (visited[adj.get(start).get(i)] && adj.get(start).get(i) != prev)
+        boolean flag = false;
+        for (int it : adj.get(start)) {
+            if (visited[it] && it != prev)
                 return true;
-            else if (!visited[adj.get(start).get(i)])
-                isLoop = isLoop || cycleInComponent(adj, visited, adj.get(start).get(i), start);
+            else if (!visited[it])
+                flag = flag || cycleInComponent(adj, visited, it, start);
         }
-
-        return isLoop;
+        return flag;
     }
 
     public static void main(String[] args) {
