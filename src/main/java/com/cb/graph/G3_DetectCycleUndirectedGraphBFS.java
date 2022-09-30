@@ -27,18 +27,20 @@ public class G3_DetectCycleUndirectedGraphBFS {
         Queue<Node<Integer>> q = new LinkedList<>();
         q.add(new Node<>(-1, start));
 
-
         while (!q.isEmpty()) {
             Node<Integer> node = q.poll();
+
             if (visited[node.current])
                 continue;
+
             visited[node.current] = true;
             int prev = node.prev;
-            for (int i = 0; i < adj.get(node.current).size(); i++) {
-                if (visited[adj.get(node.current).get(i)] && adj.get(node.current).get(i) != prev)
+
+            for (int it : adj.get(node.current)) {
+                if (visited[it] && it != prev)
                     return true;
                 else
-                    q.add(new Node<>(node.current, adj.get(node.current).get(i)));
+                    q.add(new Node<>(node.current, it));
             }
         }
         return false;
