@@ -8,7 +8,7 @@ import java.util.stream.Collectors;
  * O(n) for sorted by 'finish'
  * Greedy
  * */
-public class G1_ActivitySelectionProblem {
+public class GR1_ActivitySelectionProblem {
 
     private static void selectActivities(Activity[] arr, int n) {
         if (arr == null || n < 1) return;

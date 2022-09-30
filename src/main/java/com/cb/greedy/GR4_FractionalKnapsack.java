@@ -7,7 +7,7 @@ import java.util.Arrays;
  *  Space: O(n)
  *  Greedy
  * */
-public class G4_FractionalKnapsack {
+public class GR4_FractionalKnapsack {
 
     public static double maxCapacity(Item items[], int n, int w) {
 

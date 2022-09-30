@@ -8,7 +8,7 @@ import java.util.stream.Collectors;
  * O(n*n)
  * Greedy
  * */
-public class G2_JobSequencingProblem {
+public class GR2_JobSequencingProblem {
     private static void arrange(Job[] arr, int n) {
 
         // sort (desc) by profit

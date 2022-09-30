@@ -8,7 +8,7 @@ import java.util.PriorityQueue;
 * Time: O(nlogn)
 * Space: O(1)
 * */
-public class G3_HuffmanEncoding {
+public class GR3_HuffmanEncoding {
 
     private static Node huffmanTree(String s, int f[], int n) {
 
