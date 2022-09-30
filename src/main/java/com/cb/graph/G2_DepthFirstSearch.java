@@ -2,10 +2,11 @@ package com.cb.graph;
 
 import java.util.ArrayList;
 import java.util.List;
+
 /*
-* Time: O(v+e)
-* Space: O(v)
-* */
+ * Time: O(v+e)
+ * Space: O(v)
+ * */
 public class G2_DepthFirstSearch {
 
     public static List<Integer> dfs(int v, List<List<Integer>> adj) {
@@ -26,7 +27,7 @@ public class G2_DepthFirstSearch {
     }
 
     public static void main(String[] args) {
-        int v = 5;
+        int v = 6;
 
         List<List<Integer>> adj = new ArrayList<>();
 
@@ -34,10 +35,10 @@ public class G2_DepthFirstSearch {
             adj.add(new ArrayList<>());
 
         adj.get(0).add(1);
+        adj.get(0).add(2);
+        adj.get(0).add(3);
         adj.get(1).add(4);
-        adj.get(1).add(2);
-        adj.get(2).add(3);
-        adj.get(3).add(4);
+        adj.get(2).add(5);
 
         System.out.println(dfs(v, adj));
     }

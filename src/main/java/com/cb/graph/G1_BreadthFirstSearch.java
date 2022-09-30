@@ -12,21 +12,21 @@ import java.util.Queue;
 public class G1_BreadthFirstSearch {
 
     public static List<Integer> breadthFirstSearch(int v, List<List<Integer>> adj) {
-        Queue<Integer> queue = new LinkedList<>();
+        Queue<Integer> q = new LinkedList<>();
         List<Integer> ans = new ArrayList<>();
 
         int[] visited = new int[v];
 
-        queue.add(0);
-        while (!queue.isEmpty()) {
-            int e = queue.poll();
+        q.add(0);
+        while (!q.isEmpty()) {
+            int e = q.poll();
             if (visited[e] > 0)
                 continue;
             ans.add(e);
             visited[e] = 1;
 
             if (!adj.get(e).isEmpty())
-                queue.addAll(adj.get(e));
+                q.addAll(adj.get(e));
         }
         return ans;
     }
