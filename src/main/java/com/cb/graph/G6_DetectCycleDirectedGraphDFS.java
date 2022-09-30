@@ -1,7 +1,6 @@
 package com.cb.graph;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 /*
@@ -22,21 +21,21 @@ public class G6_DetectCycleDirectedGraphDFS {
     }
 
     public static boolean cycleInComponent(
-            List<List<Integer>> adj, boolean[] visited, boolean[] visSameRecur, int start) {
+            List<List<Integer>> adj, boolean[] visited, boolean[] visitedSameRecur, int start) {
 
         visited[start] = true;
-        visSameRecur[start] = true;
+        visitedSameRecur[start] = true;
 
         boolean flag = false;
         for (int it : adj.get(start)) {
-            if (visSameRecur[it])
+            if (visitedSameRecur[it])
                 return true;
             else if (!visited[it])
-                flag = flag || cycleInComponent(adj, visited, visSameRecur, it);
+                flag = flag || cycleInComponent(adj, visited, visitedSameRecur, it);
         }
 
         // mark unvisited for next recursion
-        visSameRecur[start] = false;
+        visitedSameRecur[start] = false;
         return flag;
     }
 
@@ -67,17 +66,5 @@ public class G6_DetectCycleDirectedGraphDFS {
 
 
         System.out.println(isLoopPresent(adj, v));
-    }
-
-    public static class Node<T> {
-        T prev;
-        T current;
-
-        public Node(
-                T prev,
-                T current) {
-            this.prev = prev;
-            this.current = current;
-        }
     }
 }
