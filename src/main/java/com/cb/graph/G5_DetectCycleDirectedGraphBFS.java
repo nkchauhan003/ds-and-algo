@@ -8,9 +8,8 @@ import java.util.stream.Collectors;
  * Space: O(v)
  * Kahn's Algorithm
  * */
-public class G8_TopologicalSortingBFS {
-    public static int[] topologicalSort(List<List<Integer>> adj, int v) {
-        int[] answer = new int[v];
+public class G5_DetectCycleDirectedGraphBFS {
+    public static boolean hasCycle(List<List<Integer>> adj, int v) {
         int[] inDegree = new int[v];
 
         //finding in-degrees
@@ -28,8 +27,7 @@ public class G8_TopologicalSortingBFS {
         int ai = 0;
         while (!q.isEmpty()) {
             int node = q.poll();
-            answer[ai++] = node;
-
+            ai++;
             // decrease in-degree for adjacent nodes
             for (int in : adj.get(node)) {
                 inDegree[in]--;
@@ -39,7 +37,7 @@ public class G8_TopologicalSortingBFS {
                     q.add(in);
             }
         }
-        return answer;
+        return !(ai == v);
     }
 
     public static void main(String[] args) {
@@ -58,13 +56,9 @@ public class G8_TopologicalSortingBFS {
         adj.get(5).add(4);
         adj.get(6).add(1);
         adj.get(6).add(7);
+        adj.get(7).add(8);
         adj.get(8).add(6);
 
-        printArray(topologicalSort(adj, v)); // 0,8,6,1,7,2,3,5,4
-    }
-
-    // Just to print output array
-    private static void printArray(int[] arr) {
-        System.out.println(Arrays.stream(arr).mapToObj(Integer::toString).collect(Collectors.joining(",")));
+        System.out.println(hasCycle(adj, v)); // true
     }
 }
