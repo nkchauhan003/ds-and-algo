@@ -6,7 +6,6 @@ import java.util.List;
 /*
  * Time: O(v+e)
  * Space: O(v)
- * Kahn's Algorithm
  * */
 public class G9_BipartiteCheckDFS {
     public static boolean isBipartite(List<List<Integer>> adj, int v) {
