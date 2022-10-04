@@ -1,37 +1,35 @@
 package com.cb.graph;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.PriorityQueue;
-import java.util.Queue;
+import java.util.*;
+import java.util.stream.Collectors;
 
 /*
  * Time: O(E * log V)
  * Space: O(V)
  * */
-public class G11_MSTPrimAlgo {
-    public static int minimumWeight(List<List<Node>> adj, int v) {
+public class G12_DijkstraAlgorithm {
+    public static int[] shortestPath(List<List<Node>> adj, int v, int source) {
 
-        boolean[] visitedNodes = new boolean[v];
+        int[] shortestPaths = new int[v];
+        for (int i = 0; i < v; i++)
+            shortestPaths[i] = Integer.MAX_VALUE;
+        shortestPaths[source] = 0;
 
         // O(n long n)
         // will make sure, edge with less weight is visited first
         Queue<Node> queue = new PriorityQueue<>();
         // we need to connect all nodes, therefore can start from any
-        queue.add(new Node(0, 0));
+        queue.add(new Node(source, 0));
 
-        int totalWeight = 0;
         while (!queue.isEmpty()) {
             Node node = queue.poll();
-            if (visitedNodes[node.num])
-                continue;
-            visitedNodes[node.num] = true;
-            totalWeight += node.weight;
-
-            queue.addAll(adj.get(node.num));
+            for (Node it : adj.get(node.num))
+                if (shortestPaths[node.num] + it.weight < shortestPaths[it.num]) {
+                    shortestPaths[it.num] = shortestPaths[node.num] + it.weight;
+                    queue.add(new Node(it.num, shortestPaths[it.num]));
+                }
         }
-
-        return totalWeight;
+        return shortestPaths;
     }
 
     public static void main(String[] args) {
@@ -59,7 +57,11 @@ public class G11_MSTPrimAlgo {
         adj.get(4).add(new Node(1, 5));
         adj.get(4).add(new Node(2, 7));
 
-        System.out.println(minimumWeight(adj, v));
+        printArray(shortestPath(adj, v, 0));
+    }
+
+    private static void printArray(int[] arr) {
+        System.out.println(Arrays.stream(arr).mapToObj(Integer::toString).collect(Collectors.joining(",")));
     }
 
     static class Node implements Comparable<Node> {
