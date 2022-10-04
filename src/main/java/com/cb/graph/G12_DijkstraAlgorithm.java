@@ -4,8 +4,8 @@ import java.util.*;
 import java.util.stream.Collectors;
 
 /*
- * Time: O(E * log V)
- * Space: O(V)
+ * Time: O(V2)
+ * Space: O(V2)
  * */
 public class G12_DijkstraAlgorithm {
     public static int[] shortestPath(List<List<Node>> adj, int v, int source) {
