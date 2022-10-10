@@ -4,6 +4,8 @@ import java.util.NoSuchElementException;
 
 /*
  * Stack using array
+ * Time: O(N)
+ * Space: O(N)
  * */
 public class ST1_ImplementStackUsingArray {
     private int[] arr;
