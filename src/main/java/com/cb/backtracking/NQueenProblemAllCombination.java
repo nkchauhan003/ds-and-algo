@@ -1,26 +1,36 @@
 package com.cb.backtracking;
 
-public class NQueenProblem {
-    public static void nQueen(int n) {
+import java.util.ArrayList;
+import java.util.List;
+
+public class NQueenProblemAllCombination {
+    public static List<List<Integer>> nQueen(int n) {
 
         int board[][] = new int[n][n];
-        solveNQueen(board, 0, n);
 
-        // print positions
-        for (int i = 0; i < n; i++) {
-            for (int j = 0; j < n; j++) {
-                if (board[i][j] == 1) {
-                    System.out.println(i + "," + j);
-                }
-            }
-        }
+        List<List<Integer>> positions = new ArrayList<>();
+        solveNQueen(board, 0, n, positions);
+
+        return positions;
     }
 
-    public static boolean solveNQueen(int board[][], int column, int n) {
+    public static void solveNQueen(int board[][], int column, int n, List<List<Integer>> positions) {
 
         // all queens are placed
-        if (column == n)
-            return true;
+        if (column == n) {
+            // add combination
+            List<Integer> position = new ArrayList<>();
+            for (int i = n - 1; i >= 0; i--) {
+                for (int j = n - 1; j >= 0; j--) {
+                    if (board[i][j] == 1) {
+                        position.add(j + 1);
+                    }
+                }
+            }
+            positions.add(position);
+            // stop this recursive call
+            return;
+        }
 
 
         for (int row = 0; row < n; row++) {
@@ -28,16 +38,12 @@ public class NQueenProblem {
                 board[row][column] = 1;
 
                 // try to place remaining queens
-                if (solveNQueen(board, column + 1, n))
-                    return true;
+                solveNQueen(board, column + 1, n, positions);
 
                 // else BACKTRACK
                 board[row][column] = 0;
             }
         }
-
-        // can't place the queen
-        return false;
     }
 
     public static boolean isSafe(int board[][], int row, int column, int n) {
@@ -61,6 +67,6 @@ public class NQueenProblem {
     }
 
     public static void main(String[] args) {
-        nQueen(4);
+        System.out.println(nQueen(4));
     }
 }
