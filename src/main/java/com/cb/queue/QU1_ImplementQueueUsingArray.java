@@ -2,6 +2,7 @@ package com.cb.queue;
 
 
 import java.util.NoSuchElementException;
+
 /*
  * Queue using array
  * Time: O(1)
@@ -47,6 +48,8 @@ public class QU1_ImplementQueueUsingArray {
         if (currentSize == 0)
             throw new NoSuchElementException();
         int e = arr[start];
+
+        // to use array circularly
         start = (start + 1) % maxSize;
         currentSize--;
         return e;
