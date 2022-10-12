@@ -3,18 +3,22 @@ package com.cb.backtracking;
 import java.util.ArrayList;
 import java.util.List;
 
+/*
+ * Time: O(N!)
+ * Space: O(N2)
+ * */
 public class NQueenProblemAllCombination {
     public static List<List<Integer>> nQueen(int n) {
 
         int board[][] = new int[n][n];
 
         List<List<Integer>> positions = new ArrayList<>();
-        solveNQueen(board, 0, n, positions);
+        nQueenRecur(board, 0, n, positions);
 
         return positions;
     }
 
-    public static void solveNQueen(int board[][], int column, int n, List<List<Integer>> positions) {
+    public static void nQueenRecur(int board[][], int column, int n, List<List<Integer>> positions) {
 
         // all queens are placed
         if (column == n) {
@@ -38,9 +42,9 @@ public class NQueenProblemAllCombination {
                 board[row][column] = 1;
 
                 // try to place remaining queens
-                solveNQueen(board, column + 1, n, positions);
+                nQueenRecur(board, column + 1, n, positions);
 
-                // else BACKTRACK
+                // else BACKTRACK (try other row)
                 board[row][column] = 0;
             }
         }
@@ -67,6 +71,6 @@ public class NQueenProblemAllCombination {
     }
 
     public static void main(String[] args) {
-        System.out.println(nQueen(4));
+        System.out.println(nQueen(4)); // [[2, 4, 1, 3], [3, 1, 4, 2]]
     }
 }

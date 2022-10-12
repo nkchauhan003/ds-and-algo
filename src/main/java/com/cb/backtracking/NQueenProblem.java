@@ -1,41 +1,36 @@
 package com.cb.backtracking;
 
+/*
+ * Time: O(N!)
+ * Space: O(N2)
+ * */
 public class NQueenProblem {
     public static void nQueen(int n) {
-
         int board[][] = new int[n][n];
-        solveNQueen(board, 0, n);
+        nQueenRecur(board, 0, n);
 
         // print positions
-        for (int i = 0; i < n; i++) {
-            for (int j = 0; j < n; j++) {
-                if (board[i][j] == 1) {
-                    System.out.println(i + "," + j);
-                }
-            }
-        }
+        printPositions(board, n);
     }
 
-    public static boolean solveNQueen(int board[][], int column, int n) {
+    public static boolean nQueenRecur(int board[][], int column, int n) {
 
         // all queens are placed
         if (column == n)
             return true;
-
 
         for (int row = 0; row < n; row++) {
             if (isSafe(board, row, column, n)) {
                 board[row][column] = 1;
 
                 // try to place remaining queens
-                if (solveNQueen(board, column + 1, n))
+                if (nQueenRecur(board, column + 1, n))
                     return true;
 
                 // else BACKTRACK
                 board[row][column] = 0;
             }
         }
-
         // can't place the queen
         return false;
     }
@@ -61,6 +56,16 @@ public class NQueenProblem {
     }
 
     public static void main(String[] args) {
-        nQueen(4);
+        nQueen(4); // [0,2] [1,0] [2,3] [3,1]
+    }
+
+    public static void printPositions(int board[][], int n) {
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < n; j++) {
+                if (board[i][j] == 1) {
+                    System.out.print("[" + i + "," + j + "] ");
+                }
+            }
+        }
     }
 }
