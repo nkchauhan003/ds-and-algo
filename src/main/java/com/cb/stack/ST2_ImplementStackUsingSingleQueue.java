@@ -13,9 +13,9 @@ public class ST2_ImplementStackUsingSingleQueue {
 
     public void push(int e) {
         q.add(e);
-        
+
         // last becomes first
-        for (int i = 0; i < q.size()-1; i++)
+        for (int i = 0; i < q.size() - 1; i++)
             q.add(q.poll());
 
     }
