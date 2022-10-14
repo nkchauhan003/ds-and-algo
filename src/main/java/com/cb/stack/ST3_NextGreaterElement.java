@@ -25,9 +25,9 @@ public class ST3_NextGreaterElement {
     }
 
     public static void main(String[] args) {
-        int arr[] = {5, 7, 1, 2, 6, 0};
+        int arr[] = {4, 5, 2, 25, 10};
         int nge[] = nextGreater(arr, arr.length);
-        printArray(nge);
+        printArray(nge); // 5,25,25,-1,-1
     }
 
     private static void printArray(int[] arr) {
