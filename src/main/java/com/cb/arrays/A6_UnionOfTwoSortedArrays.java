@@ -71,18 +71,12 @@ public class A6_UnionOfTwoSortedArrays {
     public static void main(String[] args) {
         int[] a = {1, 3, 4, 6};
         int[] b = {1, 2, 3, 5};
-        printUnion(a, b, a.length, b.length);
+        printUnion(a, b, a.length, b.length);// 1 2 3 4 5 6
 
         System.out.println();
 
         int[] a1 = {11, 33, 62, 105};
         int[] b1 = {1, 11, 105, 620};
-        printUnion(a1, b1, a1.length, b1.length);
-
-        System.out.println();
-
-        int[] a2 = {11, 33, 33, 62, 105};
-        int[] b3 = {1, 11, 105, 105, 620, 620};
-        printUnion(a1, b1, a1.length, b1.length);
+        printUnion(a1, b1, a1.length, b1.length); // 1 11 33 62 105 620
     }
 }
