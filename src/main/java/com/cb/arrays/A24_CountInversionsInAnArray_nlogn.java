@@ -1,10 +1,10 @@
-package com.cb.sort;
+package com.cb.arrays;
 
 /*
  * Time: O(n log n)
  * Space: O(n)
  * */
-public class CountInversionsInAnArray {
+public class A24_CountInversionsInAnArray_nlogn {
 
     public static long mergeSortAndCount(long[] arr, int low, int high) {
         if (low >= high) return 0;
