@@ -1,32 +1,34 @@
 package com.cb.sort;
 
-import java.util.Arrays;
-import java.util.stream.Collectors;
-
 /*
  * Time: O(n log n)
  * Space: O(n)
  * */
 public class CountInversionsInAnArray {
 
-    public static void mergeSortAndCount(int[] arr, int low, int high) {
-        if (low >= high) return;
+    public static long mergeSortAndCount(long[] arr, int low, int high) {
+        if (low >= high) return 0;
 
         int mid = (low + high) / 2;
 
-        mergeSortAndCount(arr, low, mid);
-        mergeSortAndCount(arr, mid + 1, high);
+        long count = 0;
 
-        mergeAndCount(arr, low, mid, high);
+        count += mergeSortAndCount(arr, low, mid);
+        count += mergeSortAndCount(arr, mid + 1, high);
+
+        count += mergeAndCount(arr, low, mid, high);
+        return count;
     }
 
-    public static void mergeAndCount(int[] arr, int low, int mid, int high) {
+    public static long mergeAndCount(long[] arr, int low, int mid, int high) {
+
+        long count = 0;
 
         int n = mid - low + 1;
         int m = high - mid;
 
-        int[] left = new int[n];
-        int[] right = new int[m];
+        long[] left = new long[n];
+        long[] right = new long[m];
 
         for (int i = 0; i < n; i++)
             left[i] = arr[low + i];
@@ -42,8 +44,10 @@ public class CountInversionsInAnArray {
                 arr[k] = left[i];
                 i++;
             } else {
+                // left is greater than right
                 arr[k] = right[j];
                 j++;
+                count += (mid + 1) - (low + i);
             }
             k++;
 
@@ -59,17 +63,16 @@ public class CountInversionsInAnArray {
             j++;
             k++;
         }
+
+        return count;
     }
 
     public static void main(String[] args) {
-        int arr[] = {38, 27, 43, 3, 9, 82, 10};
-        printArray(arr);
-        mergeSortAndCount(arr, 0, arr.length - 1);
-        printArray(arr);
+        long arr[] = {1, 20, 6, 4, 5};
+
+        System.out.println(mergeSortAndCount(arr, 0, arr.length - 1));
+
     }
 
-    private static void printArray(int[] arr) {
-        System.out.println(Arrays.stream(arr).mapToObj(Integer::toString).collect(Collectors.joining(",")));
-    }
 
 }
