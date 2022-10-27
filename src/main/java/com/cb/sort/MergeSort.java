@@ -2,10 +2,11 @@ package com.cb.sort;
 
 import java.util.Arrays;
 import java.util.stream.Collectors;
+
 /*
-* Time: O(n log n)
-* Space: O(n)
-* */
+ * Time: O(n log n)
+ * Space: O(n)
+ * */
 public class MergeSort {
     public static void mergeSort(int[] arr, int low, int high) {
         if (low >= high) return;

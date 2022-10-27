@@ -38,14 +38,14 @@ public class CountInversionsInAnArray {
 
         while (i < n && j < m) {
 
-                if (left[i] <= right[j]) {
-                    arr[k] = left[i];
-                    i++;
-                } else {
-                    arr[k] = right[j];
-                    j++;
-                }
-                k++;
+            if (left[i] <= right[j]) {
+                arr[k] = left[i];
+                i++;
+            } else {
+                arr[k] = right[j];
+                j++;
+            }
+            k++;
 
         }
         while (i < n) {
