@@ -5,7 +5,7 @@ import java.util.stream.Collectors;
 
 public class MergeSort {
     private static void mergeSort(int[] arr, int l, int h) {
-        // single element
+        // zero or one element
         if (l >= h)
             return;
 
