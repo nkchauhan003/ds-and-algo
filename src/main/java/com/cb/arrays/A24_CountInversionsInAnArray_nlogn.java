@@ -21,7 +21,6 @@ public class A24_CountInversionsInAnArray_nlogn {
     }
 
     public static long mergeAndCount(long[] arr, int low, int mid, int high) {
-
         long count = 0;
 
         int n = mid - low + 1;
@@ -57,22 +56,16 @@ public class A24_CountInversionsInAnArray_nlogn {
             i++;
             k++;
         }
-
         while (j < m) {
             arr[k] = right[j];
             j++;
             k++;
         }
-
         return count;
     }
 
     public static void main(String[] args) {
         long arr[] = {1, 20, 6, 4, 5};
-
         System.out.println(mergeSortAndCount(arr, 0, arr.length - 1));
-
     }
-
-
 }

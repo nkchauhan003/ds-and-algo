@@ -16,8 +16,7 @@ public class A24_CountInversionsInAnArray_n2 {
         }
         return count;
     }
-
-
+    
     public static void main(String[] args) {
         long arr[] = {1, 20, 6, 4, 5};
         System.out.println(countInversion(arr, arr.length));
