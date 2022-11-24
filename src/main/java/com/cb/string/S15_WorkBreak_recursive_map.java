@@ -16,10 +16,10 @@ public class S15_WorkBreak_recursive_map {
     private static boolean wbRecur(String s, Set<String> words) {
 
         if (s.length() == 0) return true;
-        String tmp = "";
-        for (int i = 0; i < s.length(); i++) {
-            tmp += s.charAt(i);
-            if (words.contains(tmp) && wbRecur(s.substring(i + 1), words))
+
+        for (int i = 1; i <= s.length(); i++) {
+            String tmp = s.substring(0, i);
+            if (words.contains(tmp) && wbRecur(s.substring(i), words))
                 return true;
         }
         return false;
@@ -27,6 +27,7 @@ public class S15_WorkBreak_recursive_map {
 
     public static void main(String[] args) {
         String s = "busylivingdying";
-        String[] words = {"Get", "busy", "living", "or", "get", "dying"};// true
+        String[] words = {"Get", "busy", "living", "or", "get", "dying"};
+        System.out.println(wordBreak(s, words));// true
     }
 }
