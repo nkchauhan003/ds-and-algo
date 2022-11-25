@@ -27,7 +27,7 @@ public class S15_WorkBreak_recursive_map {
 
     public static void main(String[] args) {
         String s = "busylivingdying";
-        String[] words = {"Get", "busy", "living", "or", "get", "dying"};
+        String[] words = {"Get", "busy", "liv", "living", "or", "get", "dying"};
         System.out.println(wordBreak(s, words));// true
     }
 }
