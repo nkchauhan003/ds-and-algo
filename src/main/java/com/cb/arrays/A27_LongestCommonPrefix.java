@@ -8,12 +8,16 @@ public class A27_LongestCommonPrefix {
 
     private static String longestCommonPrefix(String arr[], int n) {
         int minLength = Integer.MAX_VALUE;
+
+        // get length of smallest string
         for (int i = 0; i < n; i++)
             if (arr[i].length() < minLength)
                 minLength = arr[i].length();
 
         Character c = null;
         int last = 0;
+
+        // get last common character
         while (last < minLength) {
             for (int j = 0; j < n; j++) {
                 if (j == 0)
