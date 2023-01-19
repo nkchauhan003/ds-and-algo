@@ -5,8 +5,7 @@ package com.cb.recursion;
  * */
 public class R12_PermutationsOfString {
 
-    // print if index is at last element
-    // no more element to the right for swapping
+    // print only in last iteration
     public static void printPermutations(String s, int index) {
         if (index >= s.length() - 1) {
             System.out.println(s);
