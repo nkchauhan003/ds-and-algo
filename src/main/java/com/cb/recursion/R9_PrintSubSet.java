@@ -7,21 +7,21 @@ import java.util.ArrayList;
  * */
 public class R9_PrintSubSet {
 
-    public static void printSubset(int arr[], int index, ArrayList<Integer> result) {
+    public static void printSubset(int arr[], int index, ArrayList<Integer> currentSubset) {
 
+        // print only in last iteration
         if (index >= arr.length) {
-            result.stream().forEach(System.out::print);
-            System.out.println();
+            System.out.println(currentSubset);
             return;
         }
 
         // don't take
         // Cloning 'result' is important
-        printSubset(arr, index + 1, (ArrayList<Integer>) result.clone());
+        printSubset(arr, index + 1, (ArrayList<Integer>) currentSubset.clone());
 
         // take
-        result.add(arr[index]);
-        printSubset(arr, index + 1, result);
+        currentSubset.add(arr[index]);
+        printSubset(arr, index + 1, currentSubset);
     }
 
     public static void main(String[] args) {
