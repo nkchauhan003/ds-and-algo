@@ -5,7 +5,7 @@ import java.util.Set;
 
 /*
  * Time complexity: O(n*n)
- * Space complexity: O(n*n)
+ * Space complexity: O(n) -- reset and not accumulating
  * */
 public class S18_LongestSubstringWithoutRepeatingCharacters_n2_and_n2 {
     private static int longestSubstring(String s) {
