@@ -16,7 +16,6 @@ public class S18_LongestSubstringWithoutRepeatingCharacters_sliding_window {
         int lengthSoFar = 0, lengthTillHere = 0;
         while (i < n && j < n) {
             char c = s.charAt(j);
-
             if (map.containsKey(c) && map.get(c) >= i) {
                 i = map.get(c) + 1;
                 map.put(c, j);
