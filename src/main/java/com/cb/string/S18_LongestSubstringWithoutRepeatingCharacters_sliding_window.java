@@ -31,8 +31,7 @@ public class S18_LongestSubstringWithoutRepeatingCharacters_sliding_window {
         }
         return lengthSoFar;
     }
-
-
+    
     public static void main(String[] args) {
         String s = "umvejcuuk";
         System.out.println(longestSubstring(s));// false
