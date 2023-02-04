@@ -38,8 +38,8 @@ public class S17_BackspaceStringCompare_usingStack_n_and_n {
 
 
     public static void main(String[] args) {
-        String s = "abcd";
-        String t = "bbcd";
-        System.out.println(backspaceCompare(s, t));// true
+        String s = "bxj##tw";
+        String t = "bxj###tw";
+        System.out.println(backspaceCompare(s, t));// false
     }
 }
