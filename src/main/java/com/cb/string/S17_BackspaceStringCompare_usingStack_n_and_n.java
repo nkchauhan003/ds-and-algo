@@ -3,10 +3,10 @@ package com.cb.string;
 import java.util.Stack;
 
 /*
- * Time complexity: O(n)
- * Space complexity: O(n)
+ * Time complexity: O(n+m)
+ * Space complexity: O(n+m)
  * */
-public class S17_BackspaceStringCompare_usingStack_n_n {
+public class S17_BackspaceStringCompare_usingStack_n_and_n {
 
     private static Stack<Character> finalCharStack(String s) {
         Stack<Character> stack = new Stack<>();
