@@ -5,7 +5,7 @@ import java.util.Map;
 
 /*
  * Time complexity: O(n)
- * Space complexity: O(n)
+ * Space complexity: O(1)
  * */
 public class S18_LongestSubstringWithoutRepeatingCharacters_sliding_window {
 
