@@ -8,7 +8,6 @@ import java.util.Set;
  * Space complexity: O(n*n)
  * */
 public class S18_LongestSubstringWithoutRepeatingCharacters_n2_and_n2 {
-
     private static int longestSubstring(String s) {
         int n = s.length();
         int longestSoFar = 0;
@@ -26,7 +25,6 @@ public class S18_LongestSubstringWithoutRepeatingCharacters_n2_and_n2 {
         }
         return longestSoFar;
     }
-
 
     public static void main(String[] args) {
         String s = "abcabcbb";
