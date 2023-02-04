@@ -7,10 +7,10 @@ import java.util.stream.Collectors;
  * Time Complexity: O(n*n)
  * */
 public class A0_TwoSum_NxN {
-    public static int[] twoSum(int[] input, int x) {
+    public static int[] twoSum(int[] input, int target) {
         for (int i = 0; i < input.length; i++)
             for (int j = i + 1; j < input.length; j++) {
-                if (x - (input[i] + input[j]) == 0)
+                if (target - (input[i] + input[j]) == 0)
                     return new int[]{i, j};
             }
         return new int[]{-1, -1};
@@ -18,7 +18,7 @@ public class A0_TwoSum_NxN {
 
     // Testing
     public static void main(String[] args) {
-        printArray(twoSum(new int[]{6, 4, 3, 9, 5}, 13));  //[1,3]
+        printArray(twoSum(new int[]{1, 4, 45, 6, 10, 8}, 16));  //[3,4]
     }
 
     // Just to print output array

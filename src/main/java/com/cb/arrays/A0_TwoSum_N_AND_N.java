@@ -10,15 +10,15 @@ import java.util.stream.Collectors;
  * Space Complexity: O(n)
  * */
 public class A0_TwoSum_N_AND_N {
-    public static int[] twoSum(int[] input, int x) {
+    public static int[] twoSum(int[] input, int target) {
 
         // array value -> array index
         Map<Integer, Integer> map = new HashMap<>();
         map.put(input[0], 0);
 
         for (int i = 1; i < input.length; i++) {
-            if (map.containsKey(x - input[i]))
-                return new int[]{map.get(x - input[i]), i};
+            if (map.containsKey(target - input[i]))
+                return new int[]{map.get(target - input[i]), i};
             else
                 map.put(input[i], i);
         }
