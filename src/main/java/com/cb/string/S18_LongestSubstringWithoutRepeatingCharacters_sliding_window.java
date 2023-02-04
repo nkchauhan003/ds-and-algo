@@ -11,11 +11,16 @@ public class S18_LongestSubstringWithoutRepeatingCharacters_sliding_window {
 
     private static int longestSubstring(String s) {
         int n = s.length();
+
+        // value and index
         Map<Character, Integer> map = new HashMap<>();
         int i = 0, j = 0;
         int lengthSoFar = 0, lengthTillHere = 0;
+
         while (i < n && j < n) {
             char c = s.charAt(j);
+
+            // not before window start
             if (map.containsKey(c) && map.get(c) >= i) {
                 i = map.get(c) + 1;
                 map.put(c, j);
