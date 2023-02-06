@@ -26,7 +26,12 @@ public class CacheLRUUsingLinkedHashMap<K, V> {
     }
 
     public V get(K k) {
-        return map.get(k);
+        if (!map.containsKey(k))
+            return null;
+        var v = map.get(k);
+        map.remove(k);
+        map.put(k, v);
+        return v;
     }
 
     public Collection<V> list() {
@@ -40,8 +45,6 @@ public class CacheLRUUsingLinkedHashMap<K, V> {
         cache.add(3, 3);
         System.out.println(cache.list());
         System.out.println(cache.get(1));
-        System.out.println(cache.get(2));
-        System.out.println(cache.get(3));
         cache.add(4, 4);
         System.out.println(cache.list());
         cache.add(3, 33);
